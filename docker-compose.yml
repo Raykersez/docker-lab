@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  hospital-app:
+    build: .
+    container_name: hospital-web-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - TZ=America/Mexico_City
+    labels:
+      - "app=hospital"
+      - "environment=production"
+
